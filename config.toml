@@ -1,0 +1,13 @@
+[[zones]]
+zone = "."
+zone_type = "Forward"
+stores = { type = "forward", name_servers = [
+    # { socket_addr = "1.1.1.1:53", protocol = "udp", trust_nx_responses = false },
+    # { socket_addr = "1.0.0.1:53", protocol = "tcp", trust_nx_responses = false },
+    { socket_addr = "1.1.1.1:443", protocol = "https", trust_nx_responses = false, tls_dns_name = "1dot1dot1dot1.cloudflare-dns.com" },
+    { socket_addr = "1.0.0.1:443", protocol = "https", trust_nx_responses = false, tls_dns_name = "1dot1dot1dot1.cloudflare-dns.com" },
+    { socket_addr = "149.112.112.112:443", protocol = "https", trust_nx_responses = false, tls_dns_name = "dns.quad9.net" },
+    { socket_addr = "9.9.9.9:443", protocol = "https", trust_nx_responses = false, tls_dns_name = "dns.quad9.net" },
+    { socket_addr = "8.8.8.8:443", protocol = "https", trust_nx_responses = false, tls_dns_name = "dns.google" },
+    { socket_addr = "8.8.4.4:443", protocol = "https", trust_nx_responses = false, tls_dns_name = "dns.google" },
+] }
