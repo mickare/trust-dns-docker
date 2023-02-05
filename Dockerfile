@@ -20,7 +20,7 @@ RUN cargo install trust-dns --bins \
     --features "dns-over-rustls,dns-over-https-rustls"
 
 
-FROM debian:bookworm
+FROM debian:bookworm-slim
 ARG TRUST_DNS_VERSION
 ENV TRUST_DNS_VERSION="${TRUST_DNS_VERSION}" \
     RUST_LOG=info
