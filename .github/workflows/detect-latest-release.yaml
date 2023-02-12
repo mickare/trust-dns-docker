@@ -30,7 +30,7 @@ jobs:
           committer: GitHub <noreply@github.com>
           author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           signoff: false
-          branch: main
+          branch: feature/version-${{ steps.check.outputs.version }}
           delete-branch: true
           title: '[Bot] Bump version to latest release ${{ steps.check.outputs.version }}'
           body: |
