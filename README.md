@@ -1,4 +1,6 @@
 [![Docker Build](https://github.com/mickare/trust-dns-docker/actions/workflows/docker-build-and-publish.yaml/badge.svg)](https://github.com/mickare/trust-dns-docker/actions/workflows/docker-build-and-publish.yaml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE-MIT)
+[![License: Apache 2.0](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](LICENSE-APACHE)
 
 # Trust-DNS in Docker
 
