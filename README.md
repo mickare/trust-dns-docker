@@ -1,6 +1,6 @@
-# Trust-DNS in Docker
-
 [![Docker Build](https://github.com/mickare/trust-dns-docker/actions/workflows/docker-build-and-publish.yaml/badge.svg)](https://github.com/mickare/trust-dns-docker/actions/workflows/docker-build-and-publish.yaml)
+
+# Trust-DNS in Docker
 
 
 The Rust based DNS server [Trust-DNS](https://github.com/bluejekyll/trust-dns) installed in a Docker image.
