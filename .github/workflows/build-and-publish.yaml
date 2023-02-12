@@ -13,9 +13,9 @@ jobs:
 
     strategy:
       matrix:
-        trust_dns_version: ["0.22.0"]
+        trust_dns_version: ["0.21.2"]
         include:
-          - trust_dns_version: "0.22.0"
+          - trust_dns_version: "0.21.2"
             latest: latest
 
     steps:
@@ -47,7 +47,7 @@ jobs:
           context: .
           tags: |
             mickare/trust-dns:${{matrix.trust_dns_version}} 
-          #  ghcr.io/${{github.repository}}:${{matrix.trust_dns_version}}
+            ghcr.io/${{github.repository}}:${{matrix.trust_dns_version}}
           push: ${{ github.ref == 'refs/heads/main' }}
           labels: |
             "org.opencontainers.image.source=${{github.server_url}}/${{github.repository}}"
