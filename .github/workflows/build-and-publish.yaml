@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        trust_dns_version: ["0.21.2"]
+        trust_dns_version: ["0.21.2", "0.22.0"]
         include:
           - trust_dns_version: "0.21.2"
             latest: latest
