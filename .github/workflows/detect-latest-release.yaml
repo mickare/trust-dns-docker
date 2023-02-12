@@ -18,8 +18,8 @@ jobs:
       - name: Check for modified files
         id: check
         run: |
-          echo ::set-output name=modified::$([ -z "`git status --porcelain`" ] && echo "false" || echo "true")
-          echo ::set-output name=version::$(jq -r ".max_stable_version" ./latest-release.json)
+          echo "modified=$([ -z '`git status --porcelain`' ] && echo 'false' || echo 'true')" >> $GITHUB_OUTPUT
+          echo "version=$(jq -r '.max_stable_version' ./latest-release.json)" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         if: steps.check.outputs.modified == 'true'
