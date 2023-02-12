@@ -1,5 +1,8 @@
 # Trust-DNS in Docker
 
+[![Docker Build](https://github.com/mickare/trust-dns-docker/actions/workflows/docker-build-and-publish.yaml/badge.svg)](https://github.com/mickare/trust-dns-docker/actions/workflows/docker-build-and-publish.yaml)
+
+
 The Rust based DNS server [Trust-DNS](https://github.com/bluejekyll/trust-dns) installed in a Docker image.
 
 > **This is not the official Docker image!**
@@ -11,6 +14,10 @@ The Rust based DNS server [Trust-DNS](https://github.com/bluejekyll/trust-dns) i
 ```console
 docker run -p 53:53 mickare/trust-dns
 ```
+
+### Repositories
+- `docker.io/mickare/trust-dns` ([link](https://hub.docker.com/r/mickare/trust-dns))
+- `ghcr.io/mickare/trust-dns-docker` ([link](https://github.com/mickare/trust-dns-docker/pkgs/container/trust-dns-docker))
 
 ## Configuration
 
