@@ -6,7 +6,7 @@
 # copied, modified, or distributed except according to those terms.
 
 # syntax=docker/dockerfile:1
-ARG TRUST_DNS_VERSION="0.22.0"
+ARG TRUST_DNS_VERSION
 
 FROM rust:1.67-bookworm as builder
 ARG TRUST_DNS_VERSION

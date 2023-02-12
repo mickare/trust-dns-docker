@@ -49,6 +49,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
+          build-args: |
+            TRUST_DNS_VERSION=${{matrix.trust_dns_version}}
           tags: |
             mickare/trust-dns:${{matrix.trust_dns_version}} 
             ghcr.io/${{github.repository}}:${{matrix.trust_dns_version}}
