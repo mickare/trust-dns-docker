@@ -26,7 +26,8 @@ ENV TRUST_DNS_VERSION="${TRUST_DNS_VERSION}" \
     RUST_LOG=info
 RUN apt-get update && apt-get install -y \
     openssl libssl-dev pkg-config
-COPY --from=builder /usr/local/cargo/bin/named /usr/local/cargo/bin/trust-dns /usr/local/bin/
+# Rename binary "named" to "trust-dns"
+COPY --from=builder /usr/local/cargo/bin/named /usr/local/bin/trust-dns
 COPY config.toml /etc/trust-dns/config.toml
 COPY default/ /etc/trust-dns/default
 EXPOSE 53/tcp
