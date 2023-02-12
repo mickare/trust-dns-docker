@@ -14,17 +14,14 @@ jobs:
     name: Build Docker image and push to repositories
     # run only when code is compiling and tests are passing
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        trust_dns_version: ["0.21.2", "0.22.0"]
-        include:
-          - trust_dns_version: "0.21.2"
-            latest: latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Get Trust-DNS version
+        id: check
+        run: |
+          echo "trust_dns_version=$(jq -r '.max_stable_version' ./latest-release.json)" >> $GITHUB_OUTPUT
 
       - name: Set up Docker Buildx
         id: buildx
@@ -50,10 +47,10 @@ jobs:
         with:
           context: .
           build-args: |
-            TRUST_DNS_VERSION=${{matrix.trust_dns_version}}
+            TRUST_DNS_VERSION=${{ steps.check.outputs.trust_dns_version }}
           tags: |
-            mickare/trust-dns:${{matrix.trust_dns_version}} 
-            ghcr.io/${{github.repository}}:${{matrix.trust_dns_version}}
+            mickare/trust-dns:${{ steps.check.outputs.trust_dns_version }} 
+            ghcr.io/${{github.repository}}:${{ steps.check.outputs.trust_dns_version }}
           push: ${{ github.ref == 'refs/heads/main' }}
           labels: |
             "org.opencontainers.image.source=${{github.server_url}}/${{github.repository}}"
