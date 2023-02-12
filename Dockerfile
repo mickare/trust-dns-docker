@@ -28,6 +28,7 @@ RUN apt-get update && apt-get install -y \
     openssl libssl-dev pkg-config
 COPY --from=builder /usr/local/cargo/bin/named /usr/local/cargo/bin/trust-dns /usr/local/bin/
 COPY config.toml /etc/trust-dns/config.toml
+COPY default/ /etc/trust-dns/default
 EXPOSE 53/tcp
 EXPOSE 53/udp
 EXPOSE 853/tcp
